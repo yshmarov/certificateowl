@@ -1,0 +1,2 @@
+class CertificateTemplate < ApplicationRecord
+end
