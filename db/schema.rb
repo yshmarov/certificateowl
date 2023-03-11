@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_11_120500) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_11_121919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,4 +21,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_120500) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.bigint "certificate_template_id", null: false
+    t.boolean "display_qr", default: false
+    t.boolean "display_verify_link", default: false
+    t.boolean "display_cert_id", default: false
+    t.boolean "email", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["certificate_template_id"], name: "index_groups_on_certificate_template_id"
+  end
+
+  add_foreign_key "groups", "certificate_templates"
 end
