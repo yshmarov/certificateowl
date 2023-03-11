@@ -11,4 +11,16 @@ class CertificatesController < ApplicationController
   def show
     @certificate = Certificate.find(params[:id])
   end
+
+  def verify
+    validation_number = params[:validation_number]
+    return unless validation_number.present?
+    certificate = Certificate.find_by(slug: validation_number)
+    # TODO: check if certificate has expired
+    if certificate.present?
+      redirect_to certificate_path(certificate), notice: 'Certificate exists and is valid!'
+    else
+      redirect_to verify_certificates_path, alert: 'Invalid!'
+    end
+  end
 end

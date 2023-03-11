@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :certificates do
     collection do
       post :import
+      get :verify
     end
   end
   resources :groups
