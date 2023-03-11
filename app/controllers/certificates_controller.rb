@@ -7,4 +7,8 @@ class CertificatesController < ApplicationController
 
     redirect_to request.referer, notice: 'Import started...'
   end
+
+  def show
+    @certificate = Certificate.find(params[:id])
+  end
 end
