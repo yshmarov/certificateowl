@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-28 px-5">
+      <%= link_to 'Certificate Templates', certificate_templates_path %>
+      <%= link_to 'Groups', groups_path %>
+      <%= link_to 'Verify', verify_certificates_path %>
+      <hr>
       <%= yield %>
     </main>
   </body>

@@ -1,0 +1,37 @@
+<div id="<%= dom_id group %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= group.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Certificate template:</strong>
+    <%= group.certificate_template_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Display qr:</strong>
+    <%= group.display_qr %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Display verify link:</strong>
+    <%= group.display_verify_link %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Display cert:</strong>
+    <%= group.display_cert_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= group.email %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this group", group, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this group', edit_group_path(group), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -1,0 +1,4 @@
+<% @certificate_templates.each do |certificate_template| %>
+  <%= render partial: 'certificate_templates/certificate_template', locals: { certificate_template: } %>
+  <br>
+<% end %>
