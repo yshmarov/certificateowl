@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_11_121919) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_11_123145) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_121919) do
     t.jsonb "modifications", default: {}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "certificates", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.jsonb "modifications", default: {}
+    t.bigint "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_certificates_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -33,5 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_121919) do
     t.index ["certificate_template_id"], name: "index_groups_on_certificate_template_id"
   end
 
+  add_foreign_key "certificates", "groups"
   add_foreign_key "groups", "certificate_templates"
 end
