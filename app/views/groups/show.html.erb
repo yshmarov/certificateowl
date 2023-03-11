@@ -14,6 +14,11 @@
   </div>
 </div>
 
+<%= form_with url: import_certificates_path(group_id: @group.id), method: :post do |form| %>
+  <%= form.file_field :file, accept: ".csv" %>
+  <%= form.submit 'Import' %>
+<% end %>
+
 <h3>
   Certificates:
   <%= @certificates.count %>
