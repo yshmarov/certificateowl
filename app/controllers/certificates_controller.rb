@@ -10,6 +10,16 @@ class CertificatesController < ApplicationController
 
   def show
     @certificate = Certificate.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Certificate #{@certificate.slug}", # filename
+        template: "certificate_templates/templates/#{@certificate.group.certificate_template.id}",
+        formats: [:html],
+        disposition: :inline,
+        layout: 'pdf'
+      end
+    end
   end
 
   def verify

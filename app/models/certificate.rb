@@ -23,7 +23,6 @@ class Certificate < ApplicationRecord
   end
 
   def send_email
-    debugger
     CertificateMailer.with(certificate: self).created
   end
 end
