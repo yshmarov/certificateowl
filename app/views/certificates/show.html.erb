@@ -1,1 +1,9 @@
 <%= @certificate.attributes %>
+
+<hr>
+
+<%= link_to "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=#{@certificate.group.certificate_template.name}&organizationId=86368163&issueYear=#{@certificate.created_at.year}
+  &issueMonth=#{@certificate.created_at.month}&expirationYear=#{@certificate.created_at.year + 10}&expirationMonth=#{@certificate.created_at.month}&certUrl=#{request.url}
+  &certId=#{@certificate.slug}", target: '_blank' do %>
+  <img src="https://download.linkedin.com/desktop/add2profile/buttons/en_US.png " alt="LinkedIn Add to Profile button">
+<% end %>
