@@ -18,7 +18,7 @@
 
   <div class="my-5">
     <%= form.label :certificate_template_id %>
-    <%= form.text_field :certificate_template_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :certificate_template_id, value: (params[:certificate_template_id] || group.certificate_template.id), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
