@@ -1,0 +1,13 @@
+<%= alert %>
+
+<div>
+  Please enter the validation code found at the bottom right of the certificate.
+  Click submit to verify the certification.
+  Verification information is displayed above this text.
+  After viewing the verification information, you may continue to use this form to verify additional certificates as needed.
+</div>
+
+<%= form_with url: verify_certificates_path, method: :get, data: { turbo: 'false' } do |form| %>
+  <%= form.text_field :validation_number, placeholder: 'validation number' %>
+  <%= form.submit 'Validate' %>
+<% end %>

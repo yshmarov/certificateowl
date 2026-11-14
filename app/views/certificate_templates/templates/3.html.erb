@@ -1,0 +1,14 @@
+<% modifications = OpenStruct.new(@certificate.modifications) %>
+
+<div>
+<%= @certificate.group.certificate_template.name %>
+</div>
+
+<div>
+  <%= @certificate.name %>
+  <%= @certificate.email %>
+</div>
+
+<div>
+  <%= image_tag(@certificate.qr_code) if @certificate.qr_code.attached? %>
+</div>

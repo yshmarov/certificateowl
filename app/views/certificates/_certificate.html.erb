@@ -1,0 +1,9 @@
+<%= link_to certificate_path(certificate) do %>
+<div>
+  <%= certificate.slug %>
+  <%= certificate.name %>
+  <%= certificate.email %>
+  <%= certificate.modifications %>
+  <%= image_tag certificate.qr_code if certificate.qr_code.attached? && certificate.group.display_qr?%>
+</div>
+<% end %>

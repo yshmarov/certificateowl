@@ -1,0 +1,8 @@
+<h1>You have been issued a certificate by <%= @certificate.modifications["issued_by"] %></h1>
+
+<p>
+  Click on this link to view or download the certificate.
+
+  <%= link_to 'View your certificate', certificate_url(@certificate) %>
+  <%#= link_to 'View your certificate', certificate_url(@certificate, format: :pdf), target: :_blank %>
+</p>
