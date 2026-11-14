@@ -21,7 +21,7 @@ Known gaps: `Certificate#send_email` builds the email but never calls `deliver_l
 
 ## Product notes
 
-Collected from the first version of the idea, [vericerti](https://github.com/yshmarov/vericerti) (Legal Hackathon 2022, 3rd place), and the planning notes written around it. The code here supersedes vericerti; these ideas were never built.
+Collected from the first version of the idea, vericerti (Legal Hackathon 2022, 3rd place, deleted), and the planning notes written around it. The code here supersedes vericerti; these ideas were never built.
 
 ### The pitch
 
